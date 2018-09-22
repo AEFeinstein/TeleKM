@@ -133,7 +133,7 @@
             android:isModifier="true"
             android:isSticky="true"
             android:keyEdgeFlags="left"
-            android:keyIcon="@drawable/sym_keyboard_shift_lxx_dark" />
+            android:keyIcon="@drawable/ic_kbd_btn_shift" />
 
         <Key
             android:codes="@integer/KEYCODE_z"
@@ -158,19 +158,19 @@
             android:keyLabel="m" />
         <Key
             android:codes="@integer/KEYCODE_HORIZONTAL_TAB"
-            android:keyIcon="@drawable/sym_keyboard_tab_lxx_dark" />
+            android:keyIcon="@drawable/ic_kbd_btn_tab" />
         <Key
             android:codes="@integer/KEYCODE_BACKSPACE"
             android:isRepeatable="true"
             android:keyEdgeFlags="right"
-            android:keyIcon="@drawable/sym_keyboard_delete_lxx_dark" />
+            android:keyIcon="@drawable/ic_kbd_btn_delete" />
     </Row>
 
     <Row android:rowEdgeFlags="bottom">
         <Key
             android:codes="@integer/KEYCODE_MODE_CHANGE"
             android:keyEdgeFlags="left"
-            android:keyLabel="!@#$"
+            android:keyLabel="!@#"
             android:keyWidth="15%p" />
         <Key
             android:codes="@integer/KEYCODE_CTRL"
@@ -182,12 +182,12 @@
             android:codes="@integer/KEYCODE_SUPER"
             android:isModifier="true"
             android:isSticky="true"
-            android:keyLabel="SUPR"
+            android:keyIcon="@drawable/ic_kbd_btn_win"
             android:keyWidth="15%p" />
         <Key
             android:codes="@integer/KEYCODE_SPACE"
             android:isRepeatable="true"
-            android:keyIcon="@drawable/sym_keyboard_space_lxx_dark"
+            android:keyIcon="@drawable/ic_kbd_btn_space"
             android:keyWidth="25%p" />
         <Key
             android:codes="@integer/KEYCODE_ALT"
@@ -198,7 +198,7 @@
         <Key
             android:codes="@integer/KEYCODE_ENTER"
             android:keyEdgeFlags="right"
-            android:keyIcon="@drawable/sym_keyboard_return_lxx_dark"
+            android:keyIcon="@drawable/ic_kbd_btn_enter"
             android:keyWidth="15%p" />
     </Row>
 </Keyboard>
