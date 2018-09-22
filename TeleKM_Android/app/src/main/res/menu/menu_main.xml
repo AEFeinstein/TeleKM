@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.gelakinetic.telekm.MainActivity">
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/ic_drawer_settings"
+        app:showAsAction="ifRoom"
+        android:title="@string/action_settings" />
+    <item
+        android:id="@+id/action_about"
+        android:icon="@drawable/ic_drawer_about"
+        app:showAsAction="ifRoom"
+        android:title="@string/action_about" />
+</menu>

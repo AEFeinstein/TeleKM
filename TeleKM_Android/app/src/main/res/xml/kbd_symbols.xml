@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:horizontalGap="0px"
+    android:keyHeight="@dimen/key_height"
+    android:keyWidth="10%p"
+    android:verticalGap="0px">
+    <Row android:rowEdgeFlags="top">
+        <Key android:codes="@integer/KEYCODE_EXCLAMATION_MARK" android:keyLabel="!" android:horizontalGap="10%p" android:keyEdgeFlags="left"/>
+        <Key android:codes="@integer/KEYCODE_AT_SIGN" android:keyLabel="\@" />
+        <Key android:codes="@integer/KEYCODE_HASHTAG" android:keyLabel="#" />
+        <Key android:codes="@integer/KEYCODE_DOLLAR_SIGN" android:keyLabel="$" />
+        <Key android:codes="@integer/KEYCODE_PERCENT_SIGN" android:keyLabel="%" />
+        <Key android:codes="@integer/KEYCODE_CIRCUMFLEX_ACCENT" android:keyLabel="^" />
+        <Key android:codes="@integer/KEYCODE_AMPERSAND" android:keyLabel="&amp;" />
+        <Key android:codes="@integer/KEYCODE_ASTERISK" android:keyLabel="*" android:keyEdgeFlags="right"/>
+    </Row>
+
+    <Row>
+        <Key android:codes="@integer/KEYCODE_LEFT_PARENTHESIS" android:keyLabel="(" android:horizontalGap="10%p" android:keyEdgeFlags="left"/>
+        <Key android:codes="@integer/KEYCODE_RIGHT_PARENTHESIS" android:keyLabel=")" />
+        <Key android:codes="@integer/KEYCODE_LEFT_SQUARE_BRACKET" android:keyLabel="[" />
+        <Key android:codes="@integer/KEYCODE_RIGHT_SQUARE_BRACKET" android:keyLabel="]" />
+        <Key android:codes="@integer/KEYCODE_LESS_THAN_SIGN" android:keyLabel="&lt;" />
+        <Key android:codes="@integer/KEYCODE_GREATER_THAN_SIGN" android:keyLabel="&gt;" />
+        <Key android:codes="@integer/KEYCODE_LEFT_CURLY_BRACKET" android:keyLabel="{" />
+        <Key android:codes="@integer/KEYCODE_RIGHT_CURLY_BRACKET" android:keyLabel="}" android:keyEdgeFlags="right"/>
+    </Row>
+
+    <Row>
+        <Key android:codes="@integer/KEYCODE_HYPHEN_MINUS" android:keyLabel="-" android:horizontalGap="10%p" android:keyEdgeFlags="left"/>
+        <Key android:codes="@integer/KEYCODE_LOW_LINE" android:keyLabel="_" />
+        <Key android:codes="@integer/KEYCODE_PLUS_SIGN" android:keyLabel="+" />
+        <Key android:codes="@integer/KEYCODE_EQUAL_SIGN" android:keyLabel="=" />
+
+        <Key android:codes="@integer/KEYCODE_COLON" android:keyLabel=":" />
+        <Key android:codes="@integer/KEYCODE_SEMICOLON" android:keyLabel=";" />
+        <Key android:codes="@integer/KEYCODE_QUOTATION_MARK" android:keyLabel="&quot;" />
+        <Key android:codes="@integer/KEYCODE_APOSTROPHE" android:keyLabel="'" android:keyEdgeFlags="right"/>
+    </Row>
+
+    <Row>
+        <Key android:codes="@integer/KEYCODE_GRAVE_ACCENT" android:keyLabel="`" android:horizontalGap="10%p" android:keyEdgeFlags="left" />
+        <Key android:codes="@integer/KEYCODE_TILDE" android:keyLabel="~" />
+
+        <Key android:codes="@integer/KEYCODE_VERTICAL_BAR" android:keyLabel="|" />
+        <Key android:codes="@integer/KEYCODE_BACKSLASH" android:keyLabel="\\" />
+
+        <Key android:codes="@integer/KEYCODE_COMMA" android:keyLabel="," />
+        <Key android:codes="@integer/KEYCODE_FULL_STOP" android:keyLabel="." />
+        <Key android:codes="@integer/KEYCODE_QUESTION_MARK" android:keyLabel="\?" />
+        <Key android:codes="@integer/KEYCODE_SLASH" android:keyLabel="/" android:keyEdgeFlags="right"/>
+
+    </Row>
+
+    <Row android:rowEdgeFlags="bottom" >
+        <Key android:codes="@integer/KEYCODE_MODE_CHANGE" android:keyLabel="ASDF" android:keyWidth="15%p" android:keyEdgeFlags="left"/>
+    </Row>
+</Keyboard>

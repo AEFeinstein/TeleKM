@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Product Id="*" Name="TeleKM" Language="1033" Version="1.0.0.0" Manufacturer="gelakinetic apps" UpgradeCode="e2ad4ee9-dadb-4102-841a-705dd591aa31">
+        <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+        <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+        <MediaTemplate />
+        <Feature Id="ProductFeature" Title="TeleKM" Level="1">
+            <ComponentGroupRef Id="ProductComponents" />
+        </Feature>
+        <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+        <WixVariable Id="WixUILicenseRtf" Value="eula.rtf" />
+        <UI>
+            <UIRef Id="WixUI_InstallDir" />
+            <Publish Dialog="ExitDialog" Control="Finish" Event="DoAction" Value="LaunchApplication">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed</Publish>
+        </UI>
+        <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch TeleKM" />
+        <Property Id="WixShellExecTarget" Value="[#TeleKM.exe]" />
+        <CustomAction Id="LaunchApplication" BinaryKey="WixCA" DllEntry="WixShellExec" Impersonate="yes" />
+
+        <Icon Id="mouse.ico" SourceFile="..\TeleKM_Windows\telekm.ico"/>
+        <Property Id="ARPPRODUCTICON" Value="telekm.ico" />
+    </Product>
+    <Fragment>
+        <Directory Id="TARGETDIR" Name="SourceDir">
+            <Directory Id="ProgramFilesFolder">
+                <Directory Id="INSTALLFOLDER" Name="TeleKM" />
+            </Directory>
+        </Directory>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+            <!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+          <Component Id="ProductComponent">
+            <!-- TODO: Insert files, registry keys, and other resources here. -->
+            <File Source="$(var.TeleKM_Windows.TargetPath)" />
+          </Component>
+          <Component Id="WindowsInput">
+            <!-- TODO: Insert files, registry keys, and other resources here. -->
+            <File Source="$(var.WindowsInput.TargetPath)" />
+          </Component>
+        </ComponentGroup>
+    </Fragment>
+</Wix>

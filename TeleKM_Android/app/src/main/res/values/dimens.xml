@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="key_height">48dp</dimen>
+    <dimen name="key_preview_height">96dp</dimen>
+</resources>

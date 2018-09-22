@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- KEYCODES from Android's Keyboard.java -->
+    <integer name="KEYCODE_SHIFT">-1</integer>
+    <integer name="KEYCODE_MODE_CHANGE">-2</integer>
+    <integer name="KEYCODE_CANCEL">-3</integer>
+    <integer name="KEYCODE_DONE">-4</integer>
+    <integer name="KEYCODE_DELETE">-5</integer>
+    <integer name="KEYCODE_ALT">-6</integer>
+
+    <!-- Other non-unicode control keys -->
+    <integer name="KEYCODE_CTRL">-7</integer>
+    <integer name="KEYCODE_SUPER">-8</integer>
+
+    <!-- Unicode key codes -->
+    <integer name="KEYCODE_HORIZONTAL_TAB">9</integer>
+    <integer name="KEYCODE_ENTER">10</integer>
+    <integer name="KEYCODE_BACKSPACE">8</integer>
+
+    <integer name="KEYCODE_SPACE">32</integer>
+    <integer name="KEYCODE_EXCLAMATION_MARK">33</integer>
+    <integer name="KEYCODE_QUOTATION_MARK">34</integer>
+    <integer name="KEYCODE_HASHTAG">35</integer>
+    <integer name="KEYCODE_DOLLAR_SIGN">36</integer>
+    <integer name="KEYCODE_PERCENT_SIGN">37</integer>
+    <integer name="KEYCODE_AMPERSAND">38</integer>
+    <integer name="KEYCODE_APOSTROPHE">39</integer>
+    <integer name="KEYCODE_LEFT_PARENTHESIS">40</integer>
+    <integer name="KEYCODE_RIGHT_PARENTHESIS">41</integer>
+    <integer name="KEYCODE_ASTERISK">42</integer>
+    <integer name="KEYCODE_PLUS_SIGN">43</integer>
+    <integer name="KEYCODE_COMMA">44</integer>
+    <integer name="KEYCODE_HYPHEN_MINUS">45</integer>
+    <integer name="KEYCODE_FULL_STOP">46</integer>
+    <integer name="KEYCODE_SLASH">47</integer>
+    <integer name="KEYCODE_COLON">58</integer>
+    <integer name="KEYCODE_SEMICOLON">59</integer>
+    <integer name="KEYCODE_LESS_THAN_SIGN">60</integer>
+    <integer name="KEYCODE_EQUAL_SIGN">61</integer>
+    <integer name="KEYCODE_GREATER_THAN_SIGN">62</integer>
+    <integer name="KEYCODE_QUESTION_MARK">63</integer>
+    <integer name="KEYCODE_AT_SIGN">64</integer>
+    <integer name="KEYCODE_LEFT_SQUARE_BRACKET">91</integer>
+    <integer name="KEYCODE_BACKSLASH">92</integer>
+    <integer name="KEYCODE_RIGHT_SQUARE_BRACKET">93</integer>
+    <integer name="KEYCODE_CIRCUMFLEX_ACCENT">94</integer>
+    <integer name="KEYCODE_LOW_LINE">95</integer>
+    <integer name="KEYCODE_GRAVE_ACCENT">96</integer>
+    <integer name="KEYCODE_LEFT_CURLY_BRACKET">123</integer>
+    <integer name="KEYCODE_VERTICAL_BAR">124</integer>
+    <integer name="KEYCODE_RIGHT_CURLY_BRACKET">125</integer>
+    <integer name="KEYCODE_TILDE">126</integer>
+
+    <integer name="KEYCODE_0">48</integer>
+    <integer name="KEYCODE_1">49</integer>
+    <integer name="KEYCODE_2">50</integer>
+    <integer name="KEYCODE_3">51</integer>
+    <integer name="KEYCODE_4">52</integer>
+    <integer name="KEYCODE_5">53</integer>
+    <integer name="KEYCODE_6">54</integer>
+    <integer name="KEYCODE_7">55</integer>
+    <integer name="KEYCODE_8">56</integer>
+    <integer name="KEYCODE_9">57</integer>
+    <integer name="KEYCODE_a">97</integer>
+    <integer name="KEYCODE_b">98</integer>
+    <integer name="KEYCODE_c">99</integer>
+    <integer name="KEYCODE_d">100</integer>
+    <integer name="KEYCODE_e">101</integer>
+    <integer name="KEYCODE_f">102</integer>
+    <integer name="KEYCODE_g">103</integer>
+    <integer name="KEYCODE_h">104</integer>
+    <integer name="KEYCODE_i">105</integer>
+    <integer name="KEYCODE_j">106</integer>
+    <integer name="KEYCODE_k">107</integer>
+    <integer name="KEYCODE_l">108</integer>
+    <integer name="KEYCODE_m">109</integer>
+    <integer name="KEYCODE_n">110</integer>
+    <integer name="KEYCODE_o">111</integer>
+    <integer name="KEYCODE_p">112</integer>
+    <integer name="KEYCODE_q">113</integer>
+    <integer name="KEYCODE_r">114</integer>
+    <integer name="KEYCODE_s">115</integer>
+    <integer name="KEYCODE_t">116</integer>
+    <integer name="KEYCODE_u">117</integer>
+    <integer name="KEYCODE_v">118</integer>
+    <integer name="KEYCODE_w">119</integer>
+    <integer name="KEYCODE_x">120</integer>
+    <integer name="KEYCODE_y">121</integer>
+    <integer name="KEYCODE_z">122</integer>
+</resources>

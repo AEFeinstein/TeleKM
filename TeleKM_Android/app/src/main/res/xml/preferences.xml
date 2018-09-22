@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.preference.SwitchPreference
+        android:defaultValue="false"
+        android:key="switch_preference_1"
+        android:title="Switch preference" />
+
+    <androidx.preference.SeekBarPreference
+        android:key="seek"
+        android:title="Seekbar preference" />
+
+</androidx.preference.PreferenceScreen>

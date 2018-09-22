@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Normal -->
+    <item android:drawable="@android:color/transparent" android:state_checkable="false" android:state_pressed="false" />
+
+    <!-- Key Pressed -->
+    <item android:drawable="@color/colorPrimary" android:state_pressed="true" />
+
+    <!--Shift disabled-->
+    <item android:drawable="@android:color/transparent" android:state_checkable="true" android:state_checked="false" android:state_pressed="false" />
+
+    <!--Shift enabled-->
+    <item android:drawable="@color/colorAccent" android:state_checkable="true" android:state_checked="true" android:state_pressed="false" />
+
+</selector>
