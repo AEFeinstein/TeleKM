@@ -17,7 +17,7 @@
         <Property Id="WixShellExecTarget" Value="[#TeleKM.exe]" />
         <CustomAction Id="LaunchApplication" BinaryKey="WixCA" DllEntry="WixShellExec" Impersonate="yes" />
 
-        <Icon Id="mouse.ico" SourceFile="..\TeleKM_Windows\telekm.ico"/>
+        <Icon Id="telekm.ico" SourceFile="..\TeleKM_Windows\telekm.ico"/>
         <Property Id="ARPPRODUCTICON" Value="telekm.ico" />
     </Product>
     <Fragment>
