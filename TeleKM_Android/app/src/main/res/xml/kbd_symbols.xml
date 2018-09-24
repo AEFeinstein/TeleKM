@@ -149,7 +149,6 @@
             android:isModifier="true"
             android:isSticky="true"
             android:keyIcon="@drawable/ic_kbd_btn_win"
-            android:keyLabel="SUPR"
             android:keyWidth="15%p" />
         <Key
             android:codes="@integer/KEYCODE_SPACE"
