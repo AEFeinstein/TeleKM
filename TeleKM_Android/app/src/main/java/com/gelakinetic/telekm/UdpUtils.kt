@@ -9,26 +9,27 @@ import org.jetbrains.anko.uiThread
 import java.net.DatagramPacket
 import java.net.DatagramSocket
 import java.net.InetAddress
+import java.util.concurrent.Future
 
 class UdpUtils(private val mainActivity: MainActivity) {
 
-    private var mServerAddress: String = ""
-    private var mConnecting: Boolean = false
+    private var mServerFuture: Future<Unit>? = null
+    private var mUdpFutures: ArrayList<Future<Unit>> = ArrayList()
+    private val mHandler: Handler = Handler()
 
     fun startUdpUtils() {
 
-        mServerAddress = ""
+        if (null == mServerFuture) {
 
-        if (!mConnecting) {
-            mConnecting = true
             // Start spinning the server
-            doAsync {
+            mServerFuture = doAsync {
                 DatagramSocket(9050, InetAddress.getByName("0.0.0.0")).use { receiverSocket ->
 
                     Log.i(MainActivity.UDP_TAG, "Ready to receive broadcast packets!")
                     receiverSocket.broadcast = true
 
-                    while (mServerAddress.isEmpty()) {
+                    var serverAddress = ""
+                    while (serverAddress.isEmpty()) {
 
                         //Receive a packet
                         val receiveBuffer = ByteArray(4096)
@@ -46,12 +47,13 @@ class UdpUtils(private val mainActivity: MainActivity) {
                                 mainActivity.showSnackbar(R.string.server_found)
                             }
 
-                            mServerAddress = packet.address.hostAddress
+                            serverAddress = packet.address.hostAddress
+
+                            // Make sure another UDP broadcast isn't sent
+                            mHandler.removeCallbacksAndMessages(null)
 
                             // Now that we know the IP address of the server, open a TCP connection
                             mainActivity.setTcpServerAddress(packet.address.hostAddress)
-
-                            mConnecting = false
                         }
                     }
                     Log.i(MainActivity.UDP_TAG, "All done")
@@ -70,7 +72,8 @@ class UdpUtils(private val mainActivity: MainActivity) {
             return
         }
 
-        doAsync {
+        var future: Future<Unit>? = null
+        future = doAsync {
             val payload = message.toByteArray(Charsets.UTF_8)
             val packet = DatagramPacket(payload, payload.size, serverAddress, 9050)
 
@@ -84,17 +87,18 @@ class UdpUtils(private val mainActivity: MainActivity) {
             sock.close()
 
             uiThread {
-                Handler().postDelayed({
-                    if (mServerAddress.isEmpty()) {
-                        sendUdpPacket(getBroadcastAddress(), true, MainActivity.UDP_BROADCAST_MESSAGE)
-                    }
-                }, 5000)
                 if (isBroadcast) {
-                    Log.v(MainActivity.UDP_TAG, "Broadcast Sent")
+                    mHandler.postDelayed({
+                        sendUdpPacket(getBroadcastAddress(), true, MainActivity.UDP_BROADCAST_MESSAGE)
+                    }, 5000)
+
+                    Log.v(MainActivity.UDP_TAG, "Broadcast Sent at " + System.currentTimeMillis() / 1000)
                     mainActivity.showSnackbar(R.string.searching_for_server)
                 }
             }
+            mUdpFutures.remove(future)
         }
+        mUdpFutures.add(future)
     }
 
     private fun getBroadcastAddress(): InetAddress {
@@ -110,7 +114,13 @@ class UdpUtils(private val mainActivity: MainActivity) {
     }
 
     fun stopUdpUtils() {
+        // TODO lifecycle bug. changing orientation then connecting still sends broadcasts and doesnt set the UI
+        // TODO handler was cleared, but perhaps it wasnt the handler that had the runnable???
         // this kills loops in case the server was never received
-        mServerAddress = "die now"
+        mServerFuture?.cancel(true)
+        mUdpFutures.forEach { future -> future.cancel(true) }
+        mUdpFutures.clear()
+        mHandler.removeCallbacksAndMessages(null)
+        mServerFuture = null
     }
 }

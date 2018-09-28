@@ -204,15 +204,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     internal fun startConnectionProcess() {
-        // Start listening for a response with the server IP
+        // First stop everything for safety
+        stopConnectionProcess()
+        // Then start listening for a response with the server IP
         mUdpUtils.startUdpUtils()
-        mTcpUtils?.stopTcpClient()
-        mTcpUtils = null
+        // And disable the UI while connecting
         setEnabled(false)
     }
 
     private fun stopConnectionProcess() {
         mUdpUtils.stopUdpUtils()
         mTcpUtils?.stopTcpClient()
+        mTcpUtils = null
     }
 }
