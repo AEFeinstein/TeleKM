@@ -14,9 +14,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:keyBackground="@drawable/key_selector"
+        android:keyPreviewHeight="@dimen/key_preview_height"
         android:keyPreviewLayout="@layout/key_preview"
         android:keyPreviewOffset="@dimen/key_height"
-        android:keyPreviewHeight="@dimen/key_preview_height"
         android:keyTextColor="@color/key_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -80,7 +80,7 @@
 
     <androidx.core.widget.ContentLoadingProgressBar
         android:id="@+id/progress_circle"
-        style="?android:attr/android:progressBarStyleLarge"
+        style="?android:attr/progressBarStyleLarge"
         android:layout_width="128dp"
         android:layout_height="128dp"
         android:indeterminate="true"

@@ -77,8 +77,8 @@
             android:id="@+id/keyboard_view"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.5"
             android:layout_gravity="bottom"
+            android:layout_weight="0.5"
             android:keyBackground="@drawable/key_selector"
             android:keyPreviewHeight="@dimen/key_preview_height"
             android:keyPreviewLayout="@layout/key_preview"
@@ -89,7 +89,7 @@
 
     <androidx.core.widget.ContentLoadingProgressBar
         android:id="@+id/progress_circle"
-        style="?android:attr/android:progressBarStyleLarge"
+        style="?android:attr/progressBarStyleLarge"
         android:layout_width="128dp"
         android:layout_height="128dp"
         android:indeterminate="true"
